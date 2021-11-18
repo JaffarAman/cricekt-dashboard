@@ -31,7 +31,7 @@ app.post("/api/v1/stats" , (req,res)=>{
                 }else{
                     console.log(data)
                     res.send("successfully create")
-
+                    io.emit("cricData" , data)
                 }
         })
 
@@ -72,13 +72,16 @@ io.on("connetion" , (socket)=>{
     });
 })
 
-setInterval(()=>{
+// setInterval(()=>{
 
-    io.emit("Test topic", { event: "ADDED_ITEM", data: "some data" });
-    console.log("emiting data to all client");
+//     io.emit("Test topic", { event: "ADDED_ITEM", data: "some data" });
+//     console.log("emiting data to all client");
 
-} , 2000)
+// } , 2000)
 
-setInterval
 
-app.listen(PORT , ()=>console.log("SERVER IS RUNNING ON LOCALHOST:" + PORT));
+
+
+server.listen(PORT , ()=>console.log("Server is Running on localhost:" + PORT))
+
+// app.listen(PORT , ()=>console.log("SERVER IS RUNNING ON LOCALHOST:" + PORT));

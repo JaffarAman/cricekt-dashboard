@@ -5,6 +5,7 @@ import axios  from 'axios';
 import io from "socket.io-client"
 
 const BatingScreen = () => {
+    const [dataObj , setDataObj] = useState({})
     
     useEffect( async ()=>{
         await axios.get(`${baseURI}/api/v1/stats`)
@@ -20,11 +21,25 @@ const BatingScreen = () => {
     } , [])
 
     useEffect(()=>{
+        const socket = io("http://localhost:5000"); 
 
+        socket.on('connect', function () {
+            console.log("connected to server")
+        });
+        socket.on('disconnect', function (message) {
+            console.log("disconnected from server: ", message);
+        });
+        socket.on('cricData', function (data) {
+            console.log(data);
+            setDataObj(data)
+        });
+
+        return () => {
+            socket.close();
+        };
         
 
     } , [])
-    const [dataObj , setDataObj] = useState({})
     console.log(dataObj)
     return (
         <div className="batingMainBox">
