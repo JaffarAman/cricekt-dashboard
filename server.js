@@ -6,7 +6,7 @@ const socket = require("socket.io")
 const cors = require("cors")
 const stateModel = require("./Schema")
 const mongoose = require("mongoose")
-
+const path = require("path")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -19,7 +19,7 @@ mongoose.connect(DB_URI)
 .catch(err=>console.log(err))
 
 
-
+app.use("/" , express.static(path.join(__dirname , "./web/build")))
 app.post("/api/v1/stats" , (req,res)=>{
         // res.send("hit horhi hai..")
         const body = req.body;
