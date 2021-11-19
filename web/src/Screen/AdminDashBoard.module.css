@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainBox{
+    width:100%;
+    /* border : 1px solid black; */
+    padding: 8px;   
+    min-height: 100vh;
+    background-image: linear-gradient(to left , #E0EAFC , #CFDEF3);
+    
+}
+.topHEading{
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.matchInfo{
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.matchInfo h2{
+    border-bottom: 1px solid grey;
+    padding: 8px;
+}
+
+.matchInfo section{
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+
+}
+.matchInfo section label{
+    display: block;
+
+}
+
+.matchInfo section input{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: none;
+    font-size: large;
+    background-color: transparent;
+}
+
+.matchInfo section div{
+    width: 100%;
+    /* border: 1px solid maroon; */
+    padding: 8px;
+}
+
+
+.teamInfo{
+    width: 100%;
+    display: flex;
+    
+    }
+.teamInfo section{
+    width: 50%;
+
+}
+.teamInfo section div{
+    padding: 8px;
+    width: 100%;
+}
+.teamInfo section label{
+    display: block;
+}
+.teamInfo section input{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: none;
+    font-size: large;
+    background-color: transparent;
+}

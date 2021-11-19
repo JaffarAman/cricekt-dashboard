@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 function App() {
   return (
-    <div>
+    <div style={{width:"100%"}}>
 
       <Switch>
         <Route  path="/" exact  component={ BatingScreen }>
