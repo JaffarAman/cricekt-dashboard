@@ -154,9 +154,14 @@ const BatingScreen = () => {
           </div>
 
           <div className={styles.winingLine}>
-            <marquee behavior="" direction="">
-              PAKISTAN WON THE MATCH
+            {
+              dataObj?.commentary ? 
+              <marquee behavior="" direction="">
+              {dataObj.commentary}
             </marquee>
+              :null
+            }
+   
           </div>
         </div>
       </section>

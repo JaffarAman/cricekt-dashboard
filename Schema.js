@@ -107,6 +107,10 @@ const statsSchema = new mongoose.Schema({
             type : String,
             default : ""
         },
+        commentary :{
+            type : String,
+            default : ""
+        },
         create_on :{
             type : Date,
             default : Date.now 

@@ -42,6 +42,8 @@ const AdminDashBoard = ({ setformSubmit, matchData }) => {
   const [bowlerTwoRuns, setbowlerTwoRuns] = useState("");
   const [bowlerTwoOvers, setbowlerTwoOvers] = useState("");
   const [bowlerTwoWk, setbowlerTwoWk] = useState("");
+  
+  const [commentary, setCommentary] = useState("");
 
   const upDateHandler = async () => {
     console.log("submit handler");
@@ -102,6 +104,7 @@ bowlerTwoWk == ""
         bowlerTwoRuns,
         bowlerTwoOvers,
         bowlerTwoWk,
+        commentary
       };
   
       await axios.post(`${baseURI}/api/v1/stats` , userObj)
@@ -449,6 +452,19 @@ bowlerTwoWk == ""
           </div>
         </section>
         {/* ///bowling statsss end// */}
+      </section>
+
+      <section className={styles.commBox}>
+        <h2>Commentary:</h2>
+      <div>
+                <label htmlFor="">Commentary...</label>
+                <input
+                  type="text"
+                  value={commentary}
+                  onChange={(e) => setCommentary(e.target.value)}
+                  placeholder="Batsman Two Wickets"
+                />
+              </div>
       </section>
 
       <section className={styles.updateBtn}>
