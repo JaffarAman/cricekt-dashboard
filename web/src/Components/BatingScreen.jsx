@@ -24,7 +24,7 @@ const BatingScreen = () => {
   }, []);
 
   useEffect(() => {
-    const socket = io("http://localhost:5000");
+    const socket = io();
 
     socket.on("connect", function () {
       console.log("connected to server");
