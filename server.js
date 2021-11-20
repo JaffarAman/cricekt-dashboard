@@ -19,7 +19,7 @@ mongoose.connect(DB_URI)
 .catch(err=>console.log(err))
 
 
-app.use("/" , express.static(path.join(__dirname , "./web/build")))
+app.use("/" , express.static(path.join(__dirname , "web/build")))
 
 
 
@@ -59,7 +59,10 @@ app.get("/api/v1/stats" , (req,res)=>{
 
 
 
-
+app.get("/**", (req, res, next) => {
+    res.sendFile(path.join(__dirname, "./web/build/index.html"))
+    // res.redirect("/")
+})
 
 
 const server = http.createServer(app)
