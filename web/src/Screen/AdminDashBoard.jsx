@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AdminDashBoard.module.css";
-const AdminDashBoard = () => {
+const AdminDashBoard = ({formSubmit , setformSubmit}) => {
+  
+  const [seriesName, setSeriesName] = useState("");
+  const [teamOneName, setTeamOneName] = useState("");
+  const [teamTwoName, setTeamTwoName] = useState("");
+  const [matchNumber, setmatchNumber] = useState("");
+  
   return (
     <div className={styles.mainBox}>
       <div className={styles.topHEading}>
@@ -68,14 +74,10 @@ const AdminDashBoard = () => {
         </section>
       </section>
 
-
-
-
-            {/* ///batting info */}
-            <section className={styles.teamInfo}>
-
+      {/* ///batting info */}
+      <section className={styles.teamInfo}>
         <section>
-        <h2>Team One Score</h2>
+          <h2>Team One Score</h2>
           <div>
             <label htmlFor="">Team One Score</label>
             <input
@@ -93,9 +95,7 @@ const AdminDashBoard = () => {
               placeholder="Team One Wickets"
             />
           </div>
-        
 
-        
           <div>
             <label htmlFor="">Team One Wickets Overs</label>
             <input
@@ -104,10 +104,10 @@ const AdminDashBoard = () => {
               placeholder="Team One Overs"
             />
           </div>
-          </section>
-          
-          <section>
-        <h2>Team Two Score</h2>
+        </section>
+
+        <section>
+          <h2>Team Two Score</h2>
 
           <div>
             <label htmlFor="">Team Two Score</label>
@@ -117,8 +117,7 @@ const AdminDashBoard = () => {
               placeholder="Team Two Score"
             />
           </div>
-        
-        
+
           <div>
             <label htmlFor="">Team Two Wickets</label>
             <input
@@ -138,8 +137,166 @@ const AdminDashBoard = () => {
         </section>
       </section>
 
+      <section className={styles.statsMainBox}>
+
+            {/* ///bating statsss start// */}
+        <section className={styles.batingStats}>
+
+          <h2>Bating Stats</h2>
+          
+          <div className={styles.batingStatsBOx}>
+
+          
+          <section className={styles.batOneBox}>
+            <div>
+              <label htmlFor="">Batsman One Name</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman One Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Batsman One Runs</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman One Runs"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Batsman One Balls</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman One Balls"
+              />
+            </div>
+          </section>
+
+          <section className={styles.battwoBox}>
+            <div>
+              <label htmlFor="">Batsman Two Name</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman Two Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Batsman Two Runs</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman Two Runs"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Batsman Two Balls</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman Two Balls"
+              />
+            </div>
+          </section>
+          </div>
+        </section>
+            {/* ///bating statsss end// */}
 
 
+            {/* ///bowling statsss start// */}
+
+        <section className={styles.bowlingStats}>
+        <h2>Bowling Stats</h2>
+          
+          <div className={styles.batingStatsBOx}>
+
+          
+          <section className={styles.batOneBox}>
+            <div>
+              <label htmlFor="">Bowler One Name</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler One Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler One Runs</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler One Runs"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler One Overs</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler One Overs"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler One Wickets</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler One Wickets"
+              />
+            </div>
+          </section>
+
+          <section className={styles.battwoBox}>
+            <div>
+              <label htmlFor="">Bowler Two Name</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler Two Name"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler Two Runs</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler Two Runs"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler Two Balls</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Bowler Two Balls"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Bowler Two Wickets</label>
+              <input
+                type="text"
+                //   onChange={(e)=>setTeamTwoName(e.target.value)}
+                placeholder="Batsman Two Wickets"
+              />
+            </div>
+          </section>
+          </div>
+        </section>
+            {/* ///bowling statsss end// */}
+
+      </section>
+
+      <section className={styles.updateBtn}>
+          <button>
+
+          UPDATE SCORE
+          </button>
+          <button>
+        NEW MATCH?
+      </button>
+      </section>
 
     </div>
   );

@@ -234,7 +234,7 @@ const Form = () => {
 
     </section> 
     :
-      <AdminDashBoard />
+      <AdminDashBoard formSubmit={formSubmit}  setformSubmit={setformSubmit} />
 }
 </div>
   );
