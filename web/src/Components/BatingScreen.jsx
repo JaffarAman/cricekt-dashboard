@@ -5,6 +5,8 @@ import axios from "axios";
 import io from "socket.io-client";
 import LivePic from "../Images/live.png";
 import PakPic from "../Images/pak.png";
+import Team1 from "../Images/team1.png";
+import Team2 from "../Images/team2.png";
 
 const BatingScreen = () => {
   const [dataObj, setDataObj] = useState({});
@@ -103,22 +105,35 @@ const BatingScreen = () => {
     // </div>
     <section className={styles.mainBox}>
       <div className={styles.seriesHeading}>
-        <h1>WORLD CUP MATCH</h1>
-        <h3>PAKISTAN VS INDIA Match # 22</h3>
+        <h1>{dataObj?.seriesName ? dataObj.seriesName : "- - - - "}</h1>
+        <h3>
+          {dataObj?.teamOneName ? dataObj.teamOneName : "- -"} VS
+          {dataObj?.teamTwoName ? dataObj.teamTwoName : "- -"} Match #
+          {dataObj?.matchNumber ? dataObj.matchNumber : "- -"}
+        </h3>
       </div>
       <section className={styles.appMainBox}>
         <div className={styles.scoreBox}>
-            <small className={styles.tossHEading}>PAKISTAN WON THE TOSS AND ELECTRIC TO BOWL FIRST</small>
+          <small className={styles.tossHEading}>
+            {dataObj?.tossDes ? dataObj.tossDes : "- - - - -"}
+          </small>
           <div className={styles.liveBox}>
             <h4>LIVE MATCH</h4>
             <img src={LivePic} width="50" alt="" />
           </div>
           <div className={styles.teamScoreBox}>
             <section className={styles.teamOneBox}>
-              <img src={PakPic} width="50" alt="" />
-              <h5>PAKISTAN</h5>
-              <p>115 / 4 </p>
-              <small>43.5 Overs</small>
+              <img src={Team1} width="50" alt="" />
+              <h5>{dataObj?.teamOneName ? dataObj.teamOneName : "- -"}</h5>
+              <p>
+               
+                {dataObj?.teamOneScore ? dataObj.teamOneScore : "- -"} /
+                {dataObj?.teamOneWkt ? dataObj.teamOneWkt : "- -"}
+              </p>
+              <small>
+              
+                {dataObj?.teamOneOver ? dataObj.teamOneOver : "- -"} Overs
+              </small>
             </section>
 
             <section className={styles.versis}>
@@ -126,10 +141,15 @@ const BatingScreen = () => {
             </section>
 
             <section className={styles.teamTwoBox}>
-              <img src={PakPic} width="50" alt="" />
-              <h5>INDIA</h5>
-              <p>114 / 10 </p>
-              <small>25.5 Overs</small>
+              <img src={Team2} width="50" alt="" />
+              <h5>{dataObj?.teamTwoName ? dataObj.teamTwoName : "- -"}</h5>
+              <p>
+                {dataObj?.teamTwoScore ? dataObj.teamTwoScore : "- -"} /
+                {dataObj?.teamTwoWkt ? dataObj.teamTwoWkt : "- -"}
+              </p>
+              <small>
+                {dataObj?.teamTwoOver ? dataObj.teamTwoOver : "- -"} Overs
+              </small>
             </section>
           </div>
 
@@ -145,27 +165,46 @@ const BatingScreen = () => {
         <section className={styles.batingStats}>
           <h2>Bating Stats</h2>
           <div>
-            <h3>Babar Azam</h3>
-            <p>35 / <small>12 *</small> </p>
+            <h3>{dataObj?.batsOneName ? dataObj.batsOneName : "No Player"}</h3>
+            <p>
+              {dataObj?.batsOneRuns ? dataObj.batsOneRuns : "- -"} /
+              <small>
+                {dataObj?.batsOneBalls ? dataObj.batsOneBalls : "- -"}*
+              </small>
+            </p>
           </div>
 
           <div>
-            <h3>Muhammad Rizwan</h3>
-            <p>40 / <small>12 *</small></p>
+            <h3>{dataObj?.batsTwoName ? dataObj.batsTwoName : "No Player"}</h3>
+            <p>
+              {dataObj?.batsTwoRuns ? dataObj.batsTwoRuns : "- -"} /
+              <small>
+                {dataObj?.batsTwoBalls ? dataObj.batsTwoBalls : "- -"} *
+              </small>
+            </p>
           </div>
         </section>
 
         <section className={styles.bowlingStats}>
-        <h2>Bowling Stats</h2>
+          <h2>Bowling Stats</h2>
           <div>
-            <h3>ravi </h3>
-            <p>2 - 12 <small>2.4(over)</small></p>
+            <h3>{dataObj?.bowlerOneName ? dataObj.bowlerOneName : "No Player"}</h3>
+            <p>
+              {dataObj?.bowlerOneWk ? dataObj.bowlerOneWk : "0"} - {dataObj?.bowlerOneRuns ?
+               dataObj.bowlerOneRuns : "0"} <small>
+                {dataObj?.bowlerOneOvers ? dataObj.bowlerOneOvers : "0"}(over)
+              </small>
+            </p>
           </div>
 
           <div>
-            <h3>Muhammad Rizwan</h3>
-            <p>2 - 12 <small>2.4(over)</small></p>
-
+            <h3>{dataObj?.bowlerTwoName ? dataObj.bowlerTwoName : "No Player"}</h3>
+            <p>
+              {dataObj?.bowlerTwoWk ? dataObj.bowlerTwoWk : "0"} - {dataObj?.bowlerTwoRuns ?
+               dataObj.bowlerTwoRuns : "0"} <small>
+                {dataObj?.bowlerTwoOvers ? dataObj.bowlerTwoOvers : "0"}(over)
+              </small>
+            </p>
           </div>
         </section>
       </section>

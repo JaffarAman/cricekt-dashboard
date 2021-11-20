@@ -173,3 +173,17 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 80%;
 }
+
+@media only screen and (max-width : 460px){
+    .statsMainBox{
+        flex-wrap: wrap;    
+        
+    }
+    .batingStats{
+        width: 100%;
+    }
+    .bowlingStats{
+        width: 100%;
+
+    }
+}

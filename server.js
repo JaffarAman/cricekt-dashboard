@@ -20,6 +20,9 @@ mongoose.connect(DB_URI)
 
 
 app.use("/" , express.static(path.join(__dirname , "./web/build")))
+
+
+
 app.post("/api/v1/stats" , (req,res)=>{
         // res.send("hit horhi hai..")
         const body = req.body;
@@ -30,7 +33,7 @@ app.post("/api/v1/stats" , (req,res)=>{
                     console.log(err)
                 }else{
                     console.log(data)
-                    res.send("successfully create")
+                    res.send(data)
                     io.emit("cricData" , data)
                 }
         })
@@ -49,7 +52,7 @@ app.get("/api/v1/stats" , (req,res)=>{
                     console.log(data)
                 }
 
-        }).sort({created_on: 'desc'}).limit(1)
+        }).sort({create_on: 'desc'}).limit(1)
     
 
 })

@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AdminDashBoard from "./Screen/AdminDashBoard";
 function App() {
   return (
     <div style={{width:"100%"}}>
@@ -16,8 +17,8 @@ function App() {
        
         </Route>
         <Route path="/adminpanel" component={Form}>
-          
         </Route>
+        <Route  path="/matchDet"  component={AdminDashBoard} />
         </Switch>
 
 

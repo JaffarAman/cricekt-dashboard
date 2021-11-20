@@ -1,59 +1,111 @@
 const mongoose = require("mongoose");
 
 const statsSchema = new mongoose.Schema({
-        seriresName : {
+        seriesName : {
             type : String,
             required : true
         },
-        teamOne : {
+        teamOneName : {
             type : String,
             required : true
         },
-        teamTwo : {
+        teamTwoName : {
             type : String,
             required : true
+        },
+        matchNumber : {
+            type : String,
+            required : true
+        },
+        matchLive : {
+            type : String,
+            default : ""
+        },
+        tossDes : {
+            type : String,
+            default : ""
         },
         teamOneScore : {
             type : String,
-            required : true
+            default : ""
         },
+        teamOneWkt: {
+            type : String,
+            default : ""
+        },
+        teamOneOver : {
+            type : String,
+            default : ""
+        },
+        
         teamTwoScore : {
             type : String,
-            required : true
+            default : ""
         },
-        batsOne : {
+        teamTwoWkt : {
             type : String,
-            required : true
+            default : ""
         },
-        batsTwo : {
+        teamTwoOver :{
             type : String,
-            required : true
-        },
-        batsOneScore: {
-            type : String,
-            required : true
-        },
-        batsTwoScore : {
-            type : String,
-            required : true
+            default : ""
         },
         
-        bowlerOne : {
+        batsOneName :{
             type : String,
-            required : true
+            default : ""
         },
-        bowlerTwo : {
+        batsOneRuns :{
             type : String,
-            required : true
+            default : ""
         },
-        bowlerOneScore :{
+        batsOneBalls :{
             type : String,
-            require : true
+            default : ""
         },
-        
-        bowlerTwoScore :{
+        batsTwoName :{
             type : String,
-            require : true
+            default : ""
+        },
+        batsTwoRuns :{
+            type : String,
+            default : ""
+        },
+        batsTwoBalls :{
+            type : String,
+            default : ""
+        },
+        bowlerOneName :{
+            type : String,
+            default : ""
+        },
+        bowlerOneRuns :{
+            type : String,
+            default : ""
+        },
+        bowlerOneOvers :{
+            type : String,
+            default : ""
+        },
+        bowlerOneWk :{
+            type : String,
+            default : ""
+        },
+        bowlerTwoName :{
+            type : String,
+            default : ""
+        },
+        bowlerTwoRuns :{
+            type : String,
+            default : ""
+        },
+        bowlerTwoOvers :{
+            type : String,
+            default : ""
+        },
+        bowlerTwoWk :{
+            type : String,
+            default : ""
         },
         create_on :{
             type : Date,
